@@ -8,4 +8,3 @@
 - 技術書ではOculus Integrationを使用していないが、自分は使用して実装している。そのため、サンプルのソースコードで技術書とは異なる箇所がある。
 
 ## 課題点
-- 4.2のLookMoveTo.csにおいて、OverCameraRigのLeftEyeCameraを取得してきているが、うまく向いている方向にEthanが動いてくれない。
