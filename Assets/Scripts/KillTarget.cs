@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KillTarget : MonoBehaviour
-{
+public class KillTarget : MonoBehaviour {
 	public GameObject target;
 	public ParticleSystem hitEffect;
 	public GameObject killEffect;
@@ -16,8 +15,7 @@ public class KillTarget : MonoBehaviour
 
 
 	// Start is called before the first frame update
-	void Start()
-	{
+	void Start() {
 		score = 0;
 		countDown = timeToSelect;
 		hitEffectEmission = hitEffect.emission;
@@ -25,23 +23,19 @@ public class KillTarget : MonoBehaviour
 	}
 
 	// Update is called once per frame
-	void Update()
-	{
+	void Update() {
 		Ray ray;
 		ray = new Ray(centerEyeAnchor.position, centerEyeAnchor.forward);
 		RaycastHit hit;
 
-		if (Physics.Raycast(ray, out hit) && (hit.collider.gameObject == target))
-		{
-			if (countDown > 0.0f)
-			{
+		if (Physics.Raycast(ray, out hit) && (hit.collider.gameObject == target)) {
+			if (countDown > 0.0f) {
 				// 的中した際の処理
 				countDown -= Time.deltaTime;
 				hitEffect.transform.position = hit.point;
 				hitEffectEmission.enabled = true;
 			}
-			else
-			{
+			else {
 				// 殺された際の処理
 				Instantiate(killEffect, target.transform.position, target.transform.rotation);
 				score += 1;
@@ -49,16 +43,14 @@ public class KillTarget : MonoBehaviour
 				SetRandomPosition();
 			}
 		}
-		else
-		{
+		else {
 			// リセットする
 			countDown = timeToSelect;
 			hitEffectEmission.enabled = false;
 		}
 	}
 
-	void SetRandomPosition()
-	{
+	void SetRandomPosition() {
 		float x = Random.Range(-5.0f, 5.0f);
 		float z = Random.Range(-5.0f, 5.0f);
 		target.transform.position = new Vector3(x, 0.0f, z);
