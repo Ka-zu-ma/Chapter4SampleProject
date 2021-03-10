@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class KillTarget : MonoBehaviour {
 	public GameObject target;
@@ -9,6 +10,7 @@ public class KillTarget : MonoBehaviour {
 	public float timeToSelect = 3.0f;
 	public int score;
 	public Transform centerEyeAnchor;
+	public Text scoreText;
 
 	private ParticleSystem.EmissionModule hitEffectEmission;
 	private float countDown;
@@ -20,6 +22,7 @@ public class KillTarget : MonoBehaviour {
 		countDown = timeToSelect;
 		hitEffectEmission = hitEffect.emission;
 		hitEffectEmission.enabled = false;
+		scoreText.text = "Score: 0";
 	}
 
 	// Update is called once per frame
@@ -39,6 +42,7 @@ public class KillTarget : MonoBehaviour {
 				// 殺された際の処理
 				Instantiate(killEffect, target.transform.position, target.transform.rotation);
 				score += 1;
+				scoreText.text = "Score: " + score;
 				countDown = timeToSelect;
 				SetRandomPosition();
 			}
