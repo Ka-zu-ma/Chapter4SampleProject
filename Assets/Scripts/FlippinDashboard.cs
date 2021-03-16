@@ -20,8 +20,7 @@ public class FlippinDashboard : MonoBehaviour {
 	void Update() {
 		if (gesture.isFacingDown) {
 			OpenDashboard();
-		}
-		else {
+		} else {
 			CloseDashboard();
 		}
 	}
