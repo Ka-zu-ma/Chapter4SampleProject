@@ -18,8 +18,7 @@ public class CursorPositioner : MonoBehaviour {
 		RaycastHit hit;
 		if (Physics.Raycast(ray, out hit)) {
 			transform.localPosition = new Vector3(0, 0, hit.distance);
-		}
-		else {
+		} else {
 			transform.localPosition = new Vector3(0, 0, defaultPosZ);
 		}
 	}

@@ -37,8 +37,7 @@ public class KillTarget : MonoBehaviour {
 				countDown -= Time.deltaTime;
 				hitEffect.transform.position = hit.point;
 				hitEffectEmission.enabled = true;
-			}
-			else {
+			} else {
 				// 殺された際の処理
 				Instantiate(killEffect, target.transform.position, target.transform.rotation);
 				score += 1;
@@ -46,8 +45,7 @@ public class KillTarget : MonoBehaviour {
 				countDown = timeToSelect;
 				SetRandomPosition();
 			}
-		}
-		else {
+		} else {
 			// リセットする
 			countDown = timeToSelect;
 			hitEffectEmission.enabled = false;
