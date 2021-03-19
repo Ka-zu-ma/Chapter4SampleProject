@@ -1,12 +1,12 @@
 # Chapter4SampleProject
-「UnityによるVRアプリケーション開発」のサンプルアプリ
+「UnityによるVRアプリケーション開発」のサンプルアプリを実装してみた。
 
 ## ビルド環境
 - Unity 2019.4.22f1
 
 ## 注意点
-- 技術書ではOculus Integrationを使用していないが、自分は使用して実装している。そのため、サンプルのソースコードで技術書とは異なる箇所がある。
-- Oculus Integrationを使用した理由は、Unityのmaincameraだと頭を動かしたときに表示されている画面ごと動いてしまったから。
+- 技術書では今では非推奨のLegacy XRを使用しているが、自分はOculus Integrationを使用して実装している。そのため、サンプルのソースコードで技術書とは異なる箇所が結構ある。
+- Oculus Integrationを使用した理由は、Unityのmaincameraだと頭を動かしたときに表示されている画面ごと動いてしまったから。後日、Legacy XRを有効にしてプロジェクトをビルドすると解決された。
 
 ## 課題点
 - Ethanを見ても光線が出てこないときがある。
